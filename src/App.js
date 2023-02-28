@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Home from "./Pages/Home";
+import Error from "./Pages/Error";
+import About from "./Pages/About";
+import Housing from "./Pages/housing";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+// SASS
+import "./main.css";
+import { useState } from "react";
 
 function App() {
+  const [showFooter, setShowFooter] = useState(true);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/*" element={<Error  setShowFooter={setShowFooter} />} />
+        <Route path="housing/:id" element={<Housing setShowFooter={setShowFooter}/>} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+      {showFooter && <Footer />}
+    </BrowserRouter>
   );
 }
 
