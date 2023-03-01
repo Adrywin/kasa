@@ -7,11 +7,11 @@ function Carousel({ images }) {
   const length = images.length;
 
   const handleNextClick = () => {
-    setIndex(index === length - 1 ? 0 : index + 1);
+    setIndex((prevIndex) => prevIndex === length - 1 ? 0 : index + 1);
   };
 
   const handlePrevClick = () => {
-    setIndex(index === 0 ? length - 1 : index - 1);
+    setIndex((prevIndex) => prevIndex === 0 ? length - 1 : index - 1);
   };
 
   return (

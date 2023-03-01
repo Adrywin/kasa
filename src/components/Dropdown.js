@@ -1,35 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import arrow from "../assets/arrow.svg";
 
 const Dropdown = ({ title, content }) => {
   
-  const isDown = (event) => {  
-    
-    event.preventDefault();
-    
-    var arrow = event.target.lastChild;
-    var cat = event.target.nextSibling;
-    if(event.target.nodeName === 'P') {
-      cat = event.target.parentNode.nextSibling;
-      arrow = event.target.nextSibling;
-    }
-    
-    if (!cat.classList.contains("show")) {
-      cat.classList.add("show");
-      arrow.classList.add("rotate");
-    } else {
-      cat.classList.remove("show");
-      arrow.classList.remove("rotate");
-    }
-  };
-
+  const [isOpen, setIsOpen] = useState(false);
+  
   return (
     <div className="dropdown">
-      <button type="button" className="dropdown__button" onClick={isDown}>
+      <button type="button" className="dropdown__button" onClick={() => setIsOpen((prev) => !prev)}>
         <p className="dropdown__title">{title}</p>
-        <img src={arrow} alt="" className="dropdown__arrow" />
+        <img src={arrow} alt="arrow" className={`dropdown__arrow ${isOpen ? 'rotate' : ''}` } />
       </button>
-      <div className="dropdown__content">
+      <div className={`dropdown__content ${isOpen ? 'show' : ''}` }>
         {Array.isArray(content) ? (
           <ul className="dropdown__list">
             {content.map((equipment, index) => (
