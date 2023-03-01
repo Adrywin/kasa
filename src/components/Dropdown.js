@@ -2,12 +2,18 @@ import React from "react";
 import arrow from "../assets/arrow.svg";
 
 const Dropdown = ({ title, content }) => {
-  const isDown = (event) => {
+  
+  const isDown = (event) => {  
+    
     event.preventDefault();
-
-    const cat = event.target.nextSibling;
-    const arrow = event.target.lastChild;
-
+    
+    var arrow = event.target.lastChild;
+    var cat = event.target.nextSibling;
+    if(event.target.nodeName === 'P') {
+      cat = event.target.parentNode.nextSibling;
+      arrow = event.target.nextSibling;
+    }
+    
     if (!cat.classList.contains("show")) {
       cat.classList.add("show");
       arrow.classList.add("rotate");
