@@ -14,7 +14,7 @@ function Housing( {setShowFooter}) {
     const logement = LogementsList.find((logement) => logement.id === id);
     if(!logement) {
       return (<Error setShowFooter={setShowFooter}/>);
-    }
+    } 
     return (
         <main className="main">
           <Carousel images={logement.pictures} />
