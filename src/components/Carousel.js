@@ -27,7 +27,7 @@ function Carousel({ images }) {
             {i === index && (
               <img src={picture} alt="appartement" className="image__picture" />
             )}
-            {i === index && (
+            {i === index && length > 1 && (
               <span className="image__counter">
                 {index + 1}/{length}
               </span>

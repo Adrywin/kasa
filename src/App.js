@@ -5,10 +5,11 @@ import About from "./Pages/About";
 import Housing from "./Pages/housing";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { useState } from "react";
 
 // SASS
 import "./main.css";
-import { useState } from "react";
+
 
 function App() {
   const [showFooter, setShowFooter] = useState(true);
