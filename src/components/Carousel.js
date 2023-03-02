@@ -7,11 +7,11 @@ function Carousel({ images }) {
   const length = images.length;
 
   const handleNextClick = () => {
-    setIndex((prevIndex) => prevIndex === length - 1 ? 0 : index + 1);
+    setIndex((prevIndex) => (prevIndex === length - 1 ? 0 : index + 1));
   };
 
   const handlePrevClick = () => {
-    setIndex((prevIndex) => prevIndex === 0 ? length - 1 : index - 1);
+    setIndex((prevIndex) => (prevIndex === 0 ? length - 1 : index - 1));
   };
 
   return (
@@ -21,17 +21,15 @@ function Carousel({ images }) {
           <div
             key={i}
             className={
-              i === index
-                ? "image__active-picture"
-                : "image__inactive-picture"
+              i === index ? "image__active-picture" : "image__inactive-picture"
             }
           >
             {i === index && (
               <img src={picture} alt="appartement" className="image__picture" />
             )}
             {i === index && (
-              <span className="image__counter"> 
-              {index + 1}/{length}
+              <span className="image__counter">
+                {index + 1}/{length}
               </span>
             )}
           </div>
@@ -41,7 +39,11 @@ function Carousel({ images }) {
       {length > 1 ? (
         <>
           <div className="image__previous" onClick={handlePrevClick}>
-            <img src={arrowLeft} alt="previous" className="image__previous-icon" />
+            <img
+              src={arrowLeft}
+              alt="previous"
+              className="image__previous-icon"
+            />
           </div>
           <div className="image__next" onClick={handleNextClick}>
             <img src={arrowRight} alt="next" className="image__next-icon" />

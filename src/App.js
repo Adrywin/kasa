@@ -14,11 +14,14 @@ function App() {
   const [showFooter, setShowFooter] = useState(true);
   return (
     <BrowserRouter>
-    <Header />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/*" element={<Error  setShowFooter={setShowFooter} />} />
-        <Route path="housing/:id" element={<Housing setShowFooter={setShowFooter}/>} />
+        <Route path="/*" element={<Error setShowFooter={setShowFooter} />} />
+        <Route
+          path="housing/:id"
+          element={<Housing setShowFooter={setShowFooter} />}
+        />
         <Route path="/about" element={<About />} />
       </Routes>
       {showFooter && <Footer />}

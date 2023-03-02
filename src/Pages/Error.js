@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Error({ setShowFooter }) {
   useEffect(() => {
     setShowFooter(false);
-  })
+  });
   console.log(setShowFooter);
 
   return (
