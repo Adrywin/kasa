@@ -8,6 +8,5 @@ function Thumbnail({ image, title }) {
       <h2 className="thumbnail__title">{title}</h2>
     </div>
   );
-};
-
+}
 export default Thumbnail;

@@ -33,6 +33,5 @@ function Dropdown({ title, content }) {
       </div>
     </div>
   );
-};
-
+}
 export default Dropdown;

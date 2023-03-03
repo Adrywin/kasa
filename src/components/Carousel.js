@@ -36,7 +36,7 @@ function Carousel({ images }) {
         );
       })}
 
-      {length > 1 ? (
+      {length > 1 && (
         <>
           <div className="image__previous" onClick={handlePrevClick}>
             <img
@@ -49,9 +49,8 @@ function Carousel({ images }) {
             <img src={arrowRight} alt="next" className="image__next-icon" />
           </div>
         </>
-      ) : null}
+      )}
     </div>
   );
 }
-
 export default Carousel;

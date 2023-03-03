@@ -1,14 +1,14 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import Logo from "../assets/LOGO.svg";
 
 function Header() {
   return (
     <header className="header">
       <nav className="header__nav">
-        <NavLink to="/">
+        <Link to="/">
           <img src={Logo} alt="logo" className="header__nav__logo" />
-        </NavLink>
+        </Link>
         <div className="header__nav__links">
           <NavLink
             to="/"
@@ -35,5 +35,4 @@ function Header() {
     </header>
   );
 }
-
 export default Header;

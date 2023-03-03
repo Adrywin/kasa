@@ -6,6 +6,5 @@ function Tag({ tag }) {
       <p className="tag__text">{tag}</p>
     </div>
   );
-};
-
+}
 export default Tag;
