@@ -1,6 +1,6 @@
 import React from "react";
 
-const Banner = ({ image, title }) => {
+function Banner ({ image, title }) {
   return (
     <div className="banner">
       <img src={image} alt="" className="banner__img" />

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import arrow from "../assets/arrow.svg";
 
-const Dropdown = ({ title, content }) => {
+function Dropdown({ title, content }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

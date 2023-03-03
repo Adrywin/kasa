@@ -1,14 +1,14 @@
 import React from "react";
 
-const Host = ({ host }) => {
+function Host({ host }) {
   const HostSplit = host.name.split(" ");
   const [firstname, lastname] = HostSplit;
 
   return (
     <div className="host">
       <div className="host__name">
-        <p className="host__firstname">{firstname.trim()}</p>
-        <p className="host__lastname">{lastname.trim()}</p>
+        <p className="host__firstname">{firstname}</p>
+        <p className="host__lastname">{lastname}</p>
       </div>
 
       <img src={host.picture} alt="" className="host__picture" />

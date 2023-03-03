@@ -1,6 +1,6 @@
 import React from "react";
 
-const Thumbnail = ({ image, title }) => {
+function Thumbnail({ image, title }) {
   return (
     <div className="thumbnail">
       <img src={image} alt="thumbnail" className="thumbnail__img" />
